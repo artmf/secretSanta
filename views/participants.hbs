@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Participants
+            <a href="/addParticipant" class="btn btn-success pull-right">Add New Participant</a>
+        </h2>
+        <hr />
+        <div class="table-responsive" id="contDiv">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Full&nbsp;Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Display email sent and NOT sent-->
+                    {{#if emailMessage}}
+                        <div class="alert alert-success text-center"> <strong>{{emailMessage}}</strong></div>
+                    {{/if}}
+                    {{#if emailSentAll}}
+                        <div class="alert alert-success text-center"> <strong>{{emailSentAll}}</strong></div>
+                    {{/if}}
+
+                    {{#if emailBtn}}
+                        {{#each participants}}
+                            <tr>
+                                <td>{{name}}</a></td>
+                                <td>{{email}}</td>
+                                <td><a href="/participants/delete/{{participantNum}}" class="btn btn-danger">remove</a></td>
+                                <br><td><a href="/sendEmail/{{participantNum}}" class="btn btn-info">Send Emails</a></td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        {{#each participants}}
+                            <tr>
+                                <td>{{name}}</a></td>
+                                <td>{{email}}</td>
+                                <td><a href="/participants/delete/{{participantNum}}" class="btn btn-danger">remove</a></td>
+                            </tr>
+                        {{/each}}
+                    {{/if}}
+                </tbody>
+            </table>
+            {{#if draw}}
+                <td><a href="/draw" class="btn btn-success" id="draw">Draw Secret Names</a></td>
+                {{#if emailBtn}}
+                    <td><a href="/sendEmailAll" class="btn btn-info">Send Email to Everybody</a></td>
+                {{/if}}
+                {{#if drawAlreadyDone}}
+                    <div class="alert alert-danger"> <strong>Draw already done!!!</strong></div>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    {{#unless participants}}
+        <div class="col-md-12 text-center">
+            <strong>{{error}}</strong>
+        </div>
+    {{/unless}}
+    <!--Display no dota found and return buttom-->
+    {{#if message}}
+        <div class="col-md-12 text-center">
+            <strong>{{message}}</strong>
+            {{#if back}}
+                <br><td><a href="/participants" class="btn btn-info">Continue</a></td>
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        
+            <h2>Add Participant</h2>
+    
+            <br />
+            
+            {{#if error}}
+                <div class="alert alert-danger"> <strong>Error:</strong> {{error}}</div>
+            {{/if}}
+            {{#if message}}
+                <div class="alert alert-success"> <strong>{{message}}</strong></div>
+            {{/if}}
+
+            <form method="post" action="/addParticipant">
+            
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input class="form-control" id="name" name="name" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input class="form-control" id="email" name="email" type="email" />
+                            </div>
+                        </div>
+                </fieldset>
+            
+                <hr />
+            
+                <input type="submit" class="btn btn-primary pull-right" value="Add Participant" /><br /><br /><br />
+            
+            </form>
+    </div>
+</div>
