@@ -6,4 +6,4 @@ For the website to function, the user must be logged in, but at this point, ther
 
 For this project, I used express, express-handlebars, client-sessions, Bootstrap, bcrypt, PostgreSQL, and nodemailer.
 
-The idea now is to improve some features and add some more functionalities to the website. Some examples are better user interface, account creation feature, separate database for each user, and participant update feature.
+The idea now is to improve some features and add some more functionalities to the website. Some examples are better user interface, account creation feature, separate database for each user, and participant update feature. Also, I would like to constantly improve the code to make it more efficient and secure.
